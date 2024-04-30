@@ -40,13 +40,13 @@ function buildBoard(){
 let amount = 0;
 let disp = document.getElementById("points");
 
-cardList.onclick = function () {
-    if(){
-        amount+=2
+cardList.addEventListener('click', function (){
+    let card = document.createElement('div');
+    if(card.classList.contains("inactive")){
+        amount+=2;
         disp.innerHTML = amount;
-    } else{
+    } else {
         amount++;
         disp.innerHTML = amount;
     }
-
-}
+})
