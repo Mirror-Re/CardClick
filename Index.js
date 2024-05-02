@@ -21,6 +21,13 @@ cardList.addEventListener('click', function (e){
     if (children.length < 1){
         clearInterval(interval);
     }
+    if(cardList.classList.contains('inactive')){
+        amount++;
+        disp.innerHTML = amount;
+    } else {
+        amount+=2;
+        disp.innerHTML = amount;
+    }
 })
 
 function addCard(value){
@@ -39,14 +46,3 @@ function buildBoard(){
 
 let amount = 0;
 let disp = document.getElementById("points");
-
-cardList.addEventListener('click', function (){
-    let card = document.createElement('div');
-    if(card.classList.contains("inactive")){
-        amount+=2;
-        disp.innerHTML = amount;
-    } else {
-        amount++;
-        disp.innerHTML = amount;
-    }
-})
