@@ -14,6 +14,8 @@ cardList.addEventListener('click', function (e){
     if (e.target.classList.contains('active')){
         e.target.classList.remove('active');
         e.target.classList.add('inactive');
+        amount++;
+        disp.innerHTML = amount;
         return
     }
     e.target.remove();
@@ -21,13 +23,8 @@ cardList.addEventListener('click', function (e){
     if (children.length < 1){
         clearInterval(interval);
     }
-    if(cardList.classList.contains('inactive')){
-        amount++;
-        disp.innerHTML = amount;
-    } else {
-        amount+=2;
-        disp.innerHTML = amount;
-    }
+    amount+=2;
+    disp.innerHTML = amount;
 })
 
 function addCard(value){
